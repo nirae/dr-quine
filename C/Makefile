@@ -6,7 +6,7 @@
 #    By: ndubouil <ndubouil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/08 23:44:30 by ndubouil          #+#    #+#              #
-#    Updated: 2020/06/10 18:25:07 by ndubouil         ###   ########.fr        #
+#    Updated: 2020/06/11 12:18:16 by ndubouil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,3 +47,8 @@ fclean:		clean
 		@$(RM) -f Colleen
 
 re:			fclean all
+
+test:		all
+		@./Colleen > tmp_Colleen
+		@diff tmp_Colleen Colleen.c
+		@rm -rf tmp_Colleen
