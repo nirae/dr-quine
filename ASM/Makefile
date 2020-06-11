@@ -6,7 +6,7 @@
 #    By: ndubouil <ndubouil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/08 23:44:30 by ndubouil          #+#    #+#              #
-#    Updated: 2020/06/11 12:16:12 by ndubouil         ###   ########.fr        #
+#    Updated: 2020/06/11 22:22:48 by ndubouil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,20 +20,26 @@ ASMFLAGS=	-felf64
 
 #  Files
 
-SRCS	=	Colleen.s
+SRCS	=	Colleen.s						\
+			Grace.s
 
 OBJ		=	$(patsubst %.s,%.o,$(SRCS))
 
-.PHONY: all clean fclean re Colleen
+.PHONY: all clean fclean re Colleen Grace
 
 # Rules
 
-all:		Colleen
+all:		Colleen Grace
 		@true
 
 Colleen:	Makefile $(OBJ)
 		@echo "Building Colleen ..."
-		@$(CC) $(CFLAGS) $(OBJ) -o Colleen
+		@$(CC) $(CFLAGS) Colleen.o -o Colleen
+		@echo "I'm READY"
+
+Grace:	Makefile $(OBJ)
+		@echo "Building Grace ..."
+		@$(CC) $(CFLAGS) Grace.o -o Grace
 		@echo "I'm READY"
 
 %.o:		%.s $(SRCS)
@@ -46,11 +52,6 @@ clean:
 
 fclean:		clean
 		@echo "Cleaning binaries"
-		@$(RM) -f Colleen
+		@$(RM) -f Colleen Grace
 
 re:			fclean all
-
-test:		all
-		@ ./Colleen > tmp_Colleen
-		@diff tmp_Colleen Colleen.s
-		@rm -rf tmp_Colleen
