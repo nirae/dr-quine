@@ -6,7 +6,7 @@
 #    By: ndubouil <ndubouil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/08 23:44:30 by ndubouil          #+#    #+#              #
-#    Updated: 2020/06/11 22:22:48 by ndubouil         ###   ########.fr        #
+#    Updated: 2020/06/12 22:02:31 by ndubouil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,15 +21,16 @@ ASMFLAGS=	-felf64
 #  Files
 
 SRCS	=	Colleen.s						\
-			Grace.s
+			Grace.s							\
+			Sully.s
 
 OBJ		=	$(patsubst %.s,%.o,$(SRCS))
 
-.PHONY: all clean fclean re Colleen Grace
+.PHONY: all clean fclean re Colleen Grace Sully
 
 # Rules
 
-all:		Colleen Grace
+all:		Colleen Grace Sully
 		@true
 
 Colleen:	Makefile $(OBJ)
@@ -42,16 +43,21 @@ Grace:	Makefile $(OBJ)
 		@$(CC) $(CFLAGS) Grace.o -o Grace
 		@echo "I'm READY"
 
+Sully:	Makefile $(OBJ)
+		@echo "Building Sully ..."
+		@$(CC) $(CFLAGS) Sully.o -o Sully
+		@echo "I'm READY"
+
 %.o:		%.s $(SRCS)
 		@echo "Creating $@ ..."
 		@$(NASM) $(ASMFLAGS) $< -o $@
 
 clean:
 		@echo "Cleaning Objs ..."
-		@$(RM) -f $(OBJ)
+		@$(RM) -f $(OBJ) Grace_kid.s
 
 fclean:		clean
 		@echo "Cleaning binaries"
-		@$(RM) -f Colleen Grace
+		@$(RM) -f Colleen Grace Sully Sully_*
 
 re:			fclean all
