@@ -14,8 +14,8 @@
 
 CC		=	/usr/bin/gcc
 RM		=	/bin/rm
-CFLAGS	=	-Wall -Wextra -Werror
-NASM	= 	/usr/bin/nasm
+CFLAGS	=	-arch x86_64 -Wall -Wextra -Werror
+NASM	= 	/usr/local/bin/nasm
 ASMFLAGS=	-fmacho64
 
 #  Files
