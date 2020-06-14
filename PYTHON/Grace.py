@@ -12,7 +12,8 @@ SOURCE = {q}{q}{q}{s}{q}{q}{q}
 
 FT = lambda: FILE.write(SOURCE.format(q='"',s=SOURCE)) and FILE.close()
 
-FT()"""
+FT()
+"""
 
 FT = lambda: FILE.write(SOURCE.format(q='"',s=SOURCE)) and FILE.close()
 

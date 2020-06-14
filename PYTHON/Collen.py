@@ -14,7 +14,8 @@ def main():
     my_print()
 
 if __name__ == "__main__":
-    main()"""
+    main()
+"""
     print(source.format(q=chr(34), s=source), end='')
 
 def main():

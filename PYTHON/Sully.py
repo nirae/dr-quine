@@ -15,7 +15,8 @@ if number > 0:
     file.write(source.format(q='"', s=source, nb=(number - 1)))
     file.close()
     os.chmod("Sully_%d.py" % number, 0o755)
-    os.system("./Sully_%d.py" % number)"""
+    os.system("./Sully_%d.py" % number)
+"""
 
 number = 5
 
