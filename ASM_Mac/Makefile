@@ -6,7 +6,7 @@
 #    By: ndubouil <ndubouil@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/08 23:44:30 by ndubouil          #+#    #+#              #
-#    Updated: 2020/06/13 23:16:50 by ndubouil         ###   ########.fr        #
+#    Updated: 2020/06/14 18:47:00 by ndubouil         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 CC		=	/usr/bin/gcc
 RM		=	/bin/rm
 CFLAGS	=	-m64 -Wall -Wextra -Werror
-NASM	= 	/usr/local/bin/nasm
+NASM	= 	nasm
 ASMFLAGS=	-fmacho64
 
 #  Files
