@@ -1,8 +1,8 @@
-#! /usr/bin/python3
+#! /usr/bin/env python3
 
 import os
 
-source = """#! /usr/bin/python3
+source = """#! /usr/bin/env python3
 
 import os
 

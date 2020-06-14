@@ -1,9 +1,9 @@
-#! /usr/bin/python3
+#! /usr/bin/env python3
 # Un commentaire dehors
 
 FILE = open("Grace_kid.py", "w+")
 
-SOURCE = """#! /usr/bin/python3
+SOURCE = """#! /usr/bin/env python3
 # Un commentaire dehors
 
 FILE = open("Grace_kid.py", "w+")
